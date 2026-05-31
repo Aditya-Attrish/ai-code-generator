@@ -58,19 +58,22 @@ Require confirmation for:
 * System-level modifications
 
 Output Rules:
-Return ONLY valid JSON.
+Return ONLY valid JSON. 
 
 Schema:
 {
 "goal": "string",
 "actions": [
-{
+{ 
 "tool": "string",
 "action": "string" | [string, ...] | {key: value, ...}
 }
 ],
-"status": "in_progress|completed|error",
+"status": "in_progress|completed",
 }
+
+take the current output after each action for verification.
+return the final state with status "completed" when the task is done.
 
 Do not return markdown, explanations, or text outside the JSON object.
 
